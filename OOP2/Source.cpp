@@ -134,7 +134,7 @@ int main() {
 
 	flat_list[0] = Flat(pHuman, "Groove Street, 25", 20.25);
 
-	cout << "\n\nКвартира\n\nВладелец: " /*<< flat_list[0].getSurName() << " " << flat_list[0].getName()*/;
+	cout << "\n\nКвартира\n\nВладелец: " << flat_list[0].getSurName() << " " << flat_list[0].getName();
 	cout << "\nАдресс: " << flat_list[0].getAddress() << "\nПлощадь: " << flat_list[0].getArea();
 
 	
