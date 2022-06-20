@@ -10,7 +10,7 @@ using namespace std;
 class Flat {
 public:
 	Flat(){}
-	Flat(string nameStreet, int numberHouse, int numberFlat, double areaFlat, int countResidents, Human *residents){
+	Flat(std::string nameStreet, int numberHouse, int numberFlat, double areaFlat, int countResidents, Human *residents){
 		_nameStreet = nameStreet;
 		_numberHouse = numberHouse;
 		_numberFlat = numberFlat;
@@ -55,7 +55,7 @@ public:
 			false;
 		_residents[pos] = residents;
 	}
-	string getNameStreet()const{
+	std::string getNameStreet()const{
 		return _nameStreet;
 	}
 	int getNumberHouse()const{
@@ -64,7 +64,7 @@ public:
 	int getNumberFlat()const{
 		return _numberFlat;
 	}
-	string getFullAddress() const{
+	std::string getFullAddress() const{
 		return "Улица " + _nameStreet + ", дом " + to_string(_numberHouse) + ", квартира" + to_string(_numberFlat);
 	}
 	double getAreaFlat() const{
@@ -80,21 +80,21 @@ public:
 		return _residents[pos];
 	}
 	void ResidentsList(){
-		cout << "Список жильцов:\n";
+		std::cout << "Список жильцов:\n";
 		for (int i = 0; i < _countResidents; i++)
-			cout << "1. " << & _residents[i];
+			std::cout << "1. " << & _residents[i];
 	}
 	void fullInfoFlat(){
-		cout << "Адрес - " << getFullAddress();
-		cout << "Площадь - " << getAreaFlat();
-		cout << "Кол-во жильцов - " << getCountResidents();
-		cout << "";
+		std::cout << "Адрес - " << getFullAddress() << std::endl;
+		std::cout << "Площадь - " << getAreaFlat() << std::endl;
+		std::cout << "Кол-во жильцов - " << getCountResidents() << std::endl;
+		std::cout << "";
 	}
 
 private:
 	Human* _residents = nullptr;
 	int _countResidents = 0;
-	string _nameStreet;
+	std::string _nameStreet;
 	int _numberHouse = 0;
 	int _numberFlat = 0;
 	double _areaFlat = 0;
