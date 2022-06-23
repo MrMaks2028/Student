@@ -50,7 +50,7 @@ std::string Human::getPatronymic() const {
 	return _patronymic;
 }
 void Human::fullInfoPerson() {
-	std::cout << "Дата рождения и возраст - " /*<< getBirthday() << ", " */ << getAge() << " лет" << std::endl;
+	std::cout << "Дата рождения и возраст - " << getBirthday() << ", "  << getAge() << " лет" << std::endl;
 	std::cout << "Фамилия - " << getSurName() << std::endl;
 	std::cout << "Имя - " << getName() << std::endl;
 	std::cout << "Отчество - " << getPatronymic() << std::endl;

@@ -92,7 +92,6 @@ double Student::academicProgress() {
 	return sumGrades / _countGrades;
 }
 void Student::fullInfoStudent() {
-	std::cout << "Студент:\n\n";
 	std::cout << "Фамилия - " << getSurName() << std::endl;
 	std::cout << "Имя - " << getName() << std::endl;
 	std::cout << "Отчество - " << getPatronymic() << std::endl;

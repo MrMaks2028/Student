@@ -45,6 +45,9 @@ void Flat::setCountResidents(int countResidents) {
 		delete[]tmp;
 		tmp = nullptr;
 	}
+	else
+		_residents = new Human[countResidents];
+	_countResidents = countResidents;
 }
 void Flat::setResidents(Human residents, int pos) {
 	if (pos > _countResidents || pos < 0)
@@ -61,7 +64,7 @@ int Flat::getNumberFlat()const {
 	return _numberFlat;
 }
 std::string Flat::getFullAddress() const {
-	return "Улица " + _nameStreet + ", дом " + std::to_string(_numberHouse) + ", квартира" + std::to_string(_numberFlat);
+	return "Улица " + _nameStreet + ", дом " + std::to_string(_numberHouse) + ", квартира " + std::to_string(_numberFlat);
 }
 double Flat::getAreaFlat() const {
 	return _areaFlat;
@@ -78,11 +81,16 @@ Human Flat::getResident(int pos)const {
 void Flat::ResidentsList() {
 	std::cout << "Список жильцов:\n";
 	for (int i = 0; i < _countResidents; i++)
-		std::cout << "1. " << &_residents[i];
+		std::cout << i + 1 << ". " << _residents[i].getSurName() << " " << _residents[i].getName() << std::endl;
 }
 void Flat::fullInfoFlat() {
 	std::cout << "Адрес - " << getFullAddress() << std::endl;
-	std::cout << "Площадь - " << getAreaFlat() << std::endl;
+	std::cout << "Площадь - " << getAreaFlat() << " м2" << std::endl;
 	std::cout << "Кол-во жильцов - " << getCountResidents() << std::endl;
-	std::cout << "";
+	if (_countResidents == 1)
+		std::cout << "Минимальная площадь на 1 жильца - 33 м2";
+	if (_countResidents == 2)
+		std::cout << "Минимальная площадь на 2 жильцов - 42 м2";
+	if (_countResidents >= 3)
+		std::cout << "Минимальная площадь на каждого жильца - 18 м2";
 }
